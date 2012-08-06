@@ -155,62 +155,18 @@ abstract class Controller extends \System
 		// Articles
 		if ($intId == 0)
 		{
-			// Show a particular article only
-			if (\Input::get('articles') && $objPage->type == 'regular')
+			$return = '';
+			$objElement = \ContentModel::findPublishedByPidTableAndColumn($objPage->id, 'tl_page', $strColumn);
+
+			if ($objElement !== null)
 			{
-				list($strSection, $strArticle) = explode(':', \Input::get('articles'));
-
-				if ($strArticle === null)
+				while ($objElement->next())
 				{
-					$strArticle = $strSection;
-					$strSection = 'main';
-				}
-
-				if ($strSection == $strColumn)
-				{
-					$strBuffer = $this->getArticle($strArticle);
-
-					// Send a 404 header if the article does not exist
-					if ($strBuffer === false)
-					{
-						// Do not index the page
-						$objPage->noSearch = 1;
-						$objPage->cache = 0;
-
-						header('HTTP/1.1 404 Not Found');
-						return '<p class="error">' . sprintf($GLOBALS['TL_LANG']['MSC']['invalidPage'], $strArticle) . '</p>';
-					}
-
-					return $strBuffer;
+					$return .= $this->getContentElement($objElement->id);
 				}
 			}
 
-			// HOOK: trigger the article_raster_designer extension
-			elseif (in_array('article_raster_designer', $this->Config->getActiveModules()))
-			{
-				return \RasterDesigner::load($objPage->id, $strColumn);
-			}
-
-			// Show all articles
-			else
-			{
-				$objArticles = \ArticleModel::findPublishedByPidAndColumn($objPage->id, $strColumn);
-
-				if ($objArticles === null)
-				{
-					return '';
-				}
-
-				$return = '';
-				$blnMultiMode = ($objArticles->count() > 1);
-
-				while ($objArticles->next())
-				{
-					$return .= $this->getArticle($objArticles, $blnMultiMode, false, $strColumn);
-				}
-
-				return $return;
-			}
+			return $return;
 		}
 
 		// Other modules

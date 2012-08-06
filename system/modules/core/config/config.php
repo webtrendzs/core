@@ -19,12 +19,6 @@ $GLOBALS['BE_MOD'] = array
 	// Content modules
 	'content' => array
 	(
-		'article' => array
-		(
-			'tables' => array('tl_article', 'tl_content'),
-			'table' => array('TableWizard', 'importTable'),
-			'list' => array('ListWizard', 'importList')
-		),
 		'form' => array
 		(
 			'tables' => array('tl_form', 'tl_form_field')
@@ -43,7 +37,9 @@ $GLOBALS['BE_MOD'] = array
 		),
 		'page' => array
 		(
-			'tables' => array('tl_page')
+			'tables' => array('tl_page', 'tl_content'),
+			'table' => array('TableWizard', 'importTable'),
+			'list' => array('ListWizard', 'importList')
 		),
 		'tpl_editor' => array
 		(

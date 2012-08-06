@@ -108,29 +108,29 @@ $GLOBALS['TL_DCA']['tl_content'] = array
 	(
 		'__selector__'                => array('type', 'mooType', 'addImage', 'sortable', 'useImage', 'protected'),
 		'default'                     => '{type_legend},type',
-		'headline'                    => '{type_legend},type,headline;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'text'                        => '{type_legend},type,headline;{text_legend},text;{image_legend},addImage;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'html'                        => '{type_legend},type;{text_legend},html;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop',
-		'list'                        => '{type_legend},type,headline;{list_legend},listtype,listitems;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'table'                       => '{type_legend},type,headline;{table_legend},tableitems;{tconfig_legend},summary,thead,tfoot,tleft;{sortable_legend:hide},sortable;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'headline'                    => '{type_legend},type,headline,inColumn;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'text'                        => '{type_legend},type,headline,inColumn;{text_legend},text;{image_legend},addImage;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'html'                        => '{type_legend},type,inColumn;{text_legend},html;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop',
+		'list'                        => '{type_legend},type,headline,inColumn;{list_legend},listtype,listitems;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'table'                       => '{type_legend},type,headline,inColumn;{table_legend},tableitems;{tconfig_legend},summary,thead,tfoot,tleft;{sortable_legend:hide},sortable;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
 		'accordion'                   => '{type_legend},type,mooType',
-		'accordionmooSingle'          => '{type_legend},type,mooType;{moo_legend},mooHeadline,mooStyle,mooClasses;{text_legend},text;{image_legend},addImage;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'accordionmooStart'           => '{type_legend},type,mooType;{moo_legend},mooHeadline,mooStyle,mooClasses;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'accordionmooStop'            => '{type_legend},type,mooType;{moo_legend},mooClasses;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop',
-		'code'                        => '{type_legend},type,headline;{text_legend},highlight,shClass,code;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'hyperlink'                   => '{type_legend},type,headline;{link_legend},url,target,linkTitle,embed,titleText,rel;{imglink_legend:hide},useImage;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'toplink'                     => '{type_legend},type,linkTitle;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'image'                       => '{type_legend},type,headline;{source_legend},singleSRC;{image_legend},alt,title,size,imagemargin,imageUrl,fullsize,caption;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'gallery'                     => '{type_legend},type,headline;{source_legend},multiSRC,sortBy,useHomeDir;{image_legend},size,imagemargin,perRow,fullsize,perPage,numberOfItems;{template_legend:hide},galleryTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'player'                      => '{type_legend},type,headline;{source_legend},playerSRC;{poster_legend:hide},posterSRC;{player_legend},playerSize,autoplay;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'youtube'                     => '{type_legend},type,headline;{source_legend},youtube;{poster_legend:hide},posterSRC;{player_legend},playerSize,autoplay;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'download'                    => '{type_legend},type,headline;{source_legend},singleSRC;{dwnconfig_legend},linkTitle,titleText;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'downloads'                   => '{type_legend},type,headline;{source_legend},multiSRC,sortBy,useHomeDir;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'alias'                       => '{type_legend},type;{include_legend},cteAlias;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'article'                     => '{type_legend},type;{include_legend},articleAlias;{protected_legend:hide},protected;{invisible_legend:hide},invisible,start,stop',
-		'teaser'                      => '{type_legend},type;{include_legend},article;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'form'                        => '{type_legend},type,headline;{include_legend},form;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
-		'module'                      => '{type_legend},type;{include_legend},module;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop'
+		'accordionmooSingle'          => '{type_legend},type,mooType,inColumn;{moo_legend},mooHeadline,mooStyle,mooClasses;{text_legend},text;{image_legend},addImage;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'accordionmooStart'           => '{type_legend},type,mooType,inColumn;{moo_legend},mooHeadline,mooStyle,mooClasses;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'accordionmooStop'            => '{type_legend},type,mooType,inColumn;{moo_legend},mooClasses;{protected_legend:hide},protected;{expert_legend:hide},guests;{invisible_legend:hide},invisible,start,stop',
+		'code'                        => '{type_legend},type,headline,inColumn;{text_legend},highlight,shClass,code;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'hyperlink'                   => '{type_legend},type,headline,inColumn;{link_legend},url,target,linkTitle,embed,titleText,rel;{imglink_legend:hide},useImage;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'toplink'                     => '{type_legend},type,linkTitle,inColumn;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'image'                       => '{type_legend},type,headline,inColumn;{source_legend},singleSRC;{image_legend},alt,title,size,imagemargin,imageUrl,fullsize,caption;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'gallery'                     => '{type_legend},type,headline,inColumn;{source_legend},multiSRC,sortBy,useHomeDir;{image_legend},size,imagemargin,perRow,fullsize,perPage,numberOfItems;{template_legend:hide},galleryTpl;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'player'                      => '{type_legend},type,headline,inColumn;{source_legend},playerSRC;{poster_legend:hide},posterSRC;{player_legend},playerSize,autoplay;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'youtube'                     => '{type_legend},type,headline,inColumn;{source_legend},youtube;{poster_legend:hide},posterSRC;{player_legend},playerSize,autoplay;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'download'                    => '{type_legend},type,headline,inColumn;{source_legend},singleSRC;{dwnconfig_legend},linkTitle,titleText;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'downloads'                   => '{type_legend},type,headline,inColumn;{source_legend},multiSRC,sortBy,useHomeDir;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'alias'                       => '{type_legend},type,inColumn;{include_legend},cteAlias;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'article'                     => '{type_legend},type,inColumn;{include_legend},articleAlias;{protected_legend:hide},protected;{invisible_legend:hide},invisible,start,stop',
+		'teaser'                      => '{type_legend},type,inColumn;{include_legend},article;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'form'                        => '{type_legend},type,headline,inColumn;{include_legend},form;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop',
+		'module'                      => '{type_legend},type,inColumn;{include_legend},module;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space;{invisible_legend:hide},invisible,start,stop'
 	),
 
 	// Subpalettes
@@ -184,8 +184,19 @@ $GLOBALS['TL_DCA']['tl_content'] = array
 			'search'                  => true,
 			'inputType'               => 'inputUnit',
 			'options'                 => array('h1', 'h2', 'h3', 'h4', 'h5', 'h6'),
-			'eval'                    => array('maxlength'=>200),
+			'eval'                    => array('maxlength'=>200, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'inColumn' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_article']['inColumn'],
+			'exclude'                 => true,
+			'default'                 => 'main',
+			'inputType'               => 'select',
+			'options_callback'        => array('tl_content', 'getActivePageSections'),
+			'eval'                    => array('tl_class'=>'w50'),
+			'reference'               => &$GLOBALS['TL_LANG']['tl_article'],
+			'sql'                     => "varchar(32) NOT NULL default ''"
 		),
 		'text' => array
 		(
@@ -775,6 +786,11 @@ if (Input::get('do') == 'article')
 	$GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_article';
 	$GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('tl_content', 'checkPermission');
 }
+elseif (Input::get('do') == 'page')
+{
+	$GLOBALS['TL_DCA']['tl_content']['config']['ptable'] = 'tl_page';
+	// FIXME: $GLOBALS['TL_DCA']['tl_content']['config']['onload_callback'][] = array('tl_content', 'checkPermission');
+}
 
 
 /**
@@ -1258,6 +1274,79 @@ class tl_content extends Backend
 
 		// Return all gallery templates
 		return $this->getTemplateGroup('player_', $objLayout->pid);
+	}
+
+
+	/**
+	 * Return all active page sections as array
+	 * @param \DataContainer
+	 * @return array
+	 */
+	public function getActivePageSections(DataContainer $dc)
+	{
+		$arrCustom = array();
+		$arrSections = array('header', 'left', 'right', 'main', 'footer');
+
+		// Show only active sections
+		if ($dc->activeRecord->pid)
+		{
+			// Inherit the page settings
+			$objPage = $this->getPageDetails($dc->activeRecord->pid);
+
+			// Get the layout settings
+			$objLayout = LayoutModel::findByPk($objPage->layout);
+
+			// No layout specified
+			if ($objLayout === null)
+			{
+				return array('main');
+			}
+
+			$arrSections = array();
+
+			// Header
+			if ($objLayout->rows == '2rwh' || $objLayout->rows == '3rw')
+			{
+				$arrSections[] = 'header';
+			}
+
+			// Left column
+			if ($objLayout->cols == '2cll' || $objLayout->cols == '3cl')
+			{
+				$arrSections[] = 'left';
+			}
+
+			// Right column
+			if ($objLayout->cols == '2clr' || $objLayout->cols == '3cl')
+			{
+				$arrSections[] = 'right';
+			}
+
+			// Main column
+			$arrSections[] = 'main';
+
+			// Footer
+			if ($objLayout->rows == '2rwf' || $objLayout->rows == '3rw')
+			{
+				$arrSections[] = 'footer';
+			}
+
+			$arrCustom = deserialize($objLayout->sections);
+		}
+
+		// Always add the custom layout sections in "override all" mode
+		if (Input::get('act') == 'overrideAll')
+		{
+			$arrCustom = trimsplit(',', $GLOBALS['TL_CONFIG']['customSections']);
+		}
+
+		// Add the custom layout sections
+		if (is_array($arrCustom) && !empty($arrCustom))
+		{
+			$arrSections = array_merge($arrSections, $arrCustom);
+		}
+
+		return $arrSections;
 	}
 
 

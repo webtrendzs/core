@@ -22,7 +22,7 @@ $GLOBALS['TL_DCA']['tl_page'] = array
 	(
 		'label'                       => $GLOBALS['TL_CONFIG']['websiteTitle'],
 		'dataContainer'               => 'Table',
-		'ctable'                      => array('tl_article'),
+		'ctable'                      => array('tl_content'),
 		'enableVersioning'            => true,
 		'onload_callback' => array
 		(
@@ -85,9 +85,18 @@ $GLOBALS['TL_DCA']['tl_page'] = array
 			'edit' => array
 			(
 				'label'               => &$GLOBALS['TL_LANG']['tl_page']['edit'],
-				'href'                => 'act=edit',
+				'href'                => 'table=tl_content',
 				'icon'                => 'edit.gif',
-				'button_callback'     => array('tl_page', 'editPage')
+				'button_callback'     => array('tl_page', 'editPage'),
+				'attributes'          => 'class="contextmenu"'
+			),
+			'editheader' => array
+			(
+				'label'               => &$GLOBALS['TL_LANG']['tl_form']['editheader'],
+				'href'                => 'act=edit',
+				'icon'                => 'header.gif',
+				#'button_callback'     => array('tl_page', 'editHeader'),
+				'attributes'          => 'class="edit-header"'
 			),
 			'copy' => array
 			(

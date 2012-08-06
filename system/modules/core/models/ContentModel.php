@@ -47,7 +47,7 @@ class ContentModel extends \Model
 		$t = static::$strTable;
 
 		// Also handle empty ptable fields (backwards compatibility)
-		if ($strParentTable == 'tl_article')
+		if ($strParentTable == 'tl_page')
 		{
 			$arrColumns = array("$t.pid=? AND (ptable=? OR ptable='')");
 		}
@@ -62,5 +62,37 @@ class ContentModel extends \Model
 		}
 
 		return static::findBy($arrColumns, array($intPid, $strParentTable), array('order'=>"$t.sorting"));
+	}
+
+
+	/**
+	 * Find all published content elements by their parent ID, parent table and column
+	 * 
+	 * @param integer $intPid         The article ID
+	 * @param string  $strParentTable The parent table name
+	 * @param string  $strColumn      The column name
+	 * 
+	 * @return \Model_Collection|null A collection of models or null if there are no content elements
+	 */
+	public static function findPublishedByPidTableAndColumn($intPid, $strParentTable, $strColumn)
+	{
+		$t = static::$strTable;
+
+		// Also handle empty ptable fields (backwards compatibility)
+		if ($strParentTable == 'tl_page')
+		{
+			$arrColumns = array("$t.pid=? AND (ptable=? OR ptable='') AND inColumn=?");
+		}
+		else
+		{
+			$arrColumns = array("$t.pid=? AND ptable=? AND inColumn=?");
+		}
+
+		if (!BE_USER_LOGGED_IN)
+		{
+			$arrColumns[] = "$t.invisible=''";
+		}
+
+		return static::findBy($arrColumns, array($intPid, $strParentTable, $strColumn), array('order'=>"$t.sorting"));
 	}
 }
